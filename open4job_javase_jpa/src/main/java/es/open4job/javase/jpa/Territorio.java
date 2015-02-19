@@ -9,16 +9,15 @@ import javax.persistence.Table;
 @Table(name = "territorio")
 public class Territorio {
 	@Id
-	@GeneratedValue
-	private Integer codigo;
+	private String codigo;
 
 	private String descripcion;
 
-	public Integer getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Integer codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 
