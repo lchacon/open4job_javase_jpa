@@ -10,7 +10,8 @@ public class App {
 
 		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
 		em.getTransaction().begin();
-		em.persist(territorio);
+		em.remove(em.contains(territorio) ? territorio : em.merge(territorio));
+		//em.persist(territorio);
 		em.getTransaction().commit();
 		em.close();
 		PersistenceManager.INSTANCE.close();
